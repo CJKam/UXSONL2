@@ -8,10 +8,6 @@ public class Teacher {
     ArrayList<Course> currentCourses;
     ArrayList<Integer> courseConfidence;
 
-    public Teacher(String trim) {
-        //TODO Auto-generated constructor stub
-    }
-
     public void Init(String name, int maxSections, int minSections, int experience){
         currentCourses = new ArrayList<>();
         courseConfidence = new ArrayList<>();
