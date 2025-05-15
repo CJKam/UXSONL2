@@ -1,16 +1,44 @@
-public class testing {
-    //I want to do some testing for how to sort functions using java's built in .sort function.
-    //First, I will create a simple array of integers.
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+class OpeningWindow extends JFrame implements ActionListener {
+    JButton btn = new JButton("Continue");
+
+    public OpeningWindow() {
+        setTitle("Opening Window");
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setLocation(200, 100);
+        setSize(200, 100);
+        Container frame = getContentPane();
+        JPanel jp = new JPanel();
+        btn.addActionListener(this);
+        JLabel lbl = new JLabel("I am the opening window");
+        jp.add(lbl, BorderLayout.NORTH);
+        jp.add(btn, BorderLayout.SOUTH);
+        frame.add(jp);
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        new MainWindow().setVisible(true);
+        this.dispose();
+    }
+
     public static void main(String[] args) {
+        new OpeningWindow().setVisible(true);
+    }
+}
 
-        //Now, I will create a simple array of integers.
-        int[] arr = {4, 2, 9, 1, 5};
-        System.out.println("Original Array: " + java.util.Arrays.toString(arr));
-        java.util.Arrays.sort(arr);
-        System.out.println("Sorted Array: " + java.util.Arrays.toString(arr));
-        
-
-        //
-
+class MainWindow extends JFrame {
+    public MainWindow() {
+        setTitle("Main Window");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocation(400, 100);
+        setSize(600, 400);
+        Container frame = getContentPane();
+        JPanel jp = new JPanel();
+        JLabel lbl = new JLabel("I am the main window");
+        jp.add(lbl);
+        frame.add(jp);
     }
 }

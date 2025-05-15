@@ -18,5 +18,6 @@ public class Course {
     public void AdjustSectionSize(int newMaxSections){numOfSections = newMaxSections;}
     public ArrayList<Teacher> currentTeachers(){return currentTeachers;}
     public int capacity(){return numOfSections - currentTeachers.size();}
+    public String getName(){return courseName;};
     
 }

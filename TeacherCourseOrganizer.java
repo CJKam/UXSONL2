@@ -20,6 +20,7 @@ public class TeacherCourseOrganizer {
         teacher.Init(name, maxSection, minSection, experience);
         teacherList.add(teacher);
         //Need a new teacher thats added to have a number of confidence values equal to the number of courses
+        System.out.printf("Teacher %s added\n", name);
     }
     
     public void removeTeacher(Teacher teacher){
@@ -75,6 +76,12 @@ public class TeacherCourseOrganizer {
             teacher.getCourseConfidence().set(index, confidence);
         } else {
             System.out.println("Invalid course or teacher.");
+        }
+    }
+
+    public void setAllConfidenceZero(Teacher teacher, ArrayList<Course> courseList){
+        for (int i = 0; i < courseList.size()-1;i++){
+            teacher.courseConfidence.add(0);
         }
     }
 
